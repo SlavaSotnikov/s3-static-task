@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = 'https://github.com/your-username/your-repo.git'
+        REPO_URL = 'https://github.com/SlavaSotnikov/s3-static-task.git'
         DEPLOY_DIR = '/var/www/html'
     }
 
