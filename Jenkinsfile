@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     sh "rm -rf workspace || true"
-                    sh "git clone ${REPO_URL} workspace"
+                    sh "git clone --depth=1 ${REPO_URL} workspace"
                 }
             }
         }
