@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     sh "rm -rf workspace || true"
-                    sh "git clone --depth=1 ${REPO_URL} workspace"
+                    sh "git clone ${REPO_URL} workspace"
                 }
             }
         }
@@ -19,7 +19,10 @@ pipeline {
         stage('Deploy Files') {
             steps {
                 script {
-                    sh "sudo cp -r workspace/* ${DEPLOY_DIR}/"
+                    sh "sudo rm -rf ${DEPLOY_DIR}/*"
+					sh "sudo cp -r workspace/* ${DEPLOY_DIR}/"
+					sh "sudo chown -R apache:apache ${DEPLOY_DIR}"
+					sh "sudo chmod -R 755 ${DEPLOY_DIR}"
                 }
             }
         }
