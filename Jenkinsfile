@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         REPO_URL = 'https://github.com/SlavaSotnikov/s3-static-task.git'
-        DEPLOY_DIR = '/var/www/html'
+        DEPLOY_DIR = '/var/www/html/s3-static-task'
     }
 
     stages {
